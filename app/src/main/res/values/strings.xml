@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">JSdkDemo</string>
+    <string name="openwm">打开弹窗</string>
+    <string name="closewm">关闭弹窗</string>
+</resources>
