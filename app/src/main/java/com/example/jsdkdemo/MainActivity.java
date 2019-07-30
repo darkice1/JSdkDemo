@@ -4,9 +4,9 @@ import android.app.Activity;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         params.width = 640;
         params.height = 100;
 
-        params.gravity = params.gravity = Gravity.BOTTOM;
+        params.gravity = Gravity.BOTTOM;
 
         this.addContentView(adv, params);
 
