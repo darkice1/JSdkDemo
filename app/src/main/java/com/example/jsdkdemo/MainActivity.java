@@ -42,14 +42,37 @@ public class MainActivity extends AppCompatActivity {
 
         TestJs js = new TestJs();
         act = this;
-        JyAdView adv = JyAd.initNormalAdView(this, "MEJDNjhDMDJCMzJEQUI1", 320,
-                50, js);
+        JyAdView adv = JyAd.initNormalAdView(this, "MEJDNjhDMDJCMzJEQUI1", 480,320, js,"<!DOCTYPE html>\n" +
+                "<html>\n" +
+                "<head>\n" +
+                "<meta charset=\"utf-8\" />\n" +
+                "<title></title>\n" +
+                "</head>\n" +
+                "<style type=\"text/css\">\n" +
+                "*{margin: 0;padding: 0;font-style: normal;text-decoration: none;}\n" +
+                "</style>\n" +
+                "<body>\n" +
+                "<a href=\"__landingpage_url__\" target=\"_blank\">\n" +
+                "<div style=\"overflow: hidden;width: 1400px;\">\n" +
+                "<div><img src=\"__adurl__\" style=\"float: left;margin: 0;padding: 0;\"></div>\n" +
+                "<div style=\"float: left;margin-top: 20px;width: 920px;\">\n" +
+                "<p id=\"\" style=\"font-size:2rem;width: 900px;height: 200px;word-wrap: break-word;word-break: normal; margin-left: 20px;color: #333333;\">\n" +
+                "__title__\n" +
+                "</p>\n" +
+                "<p style=\"font-size:1rem;margin-left:20px;color: #808080;\">\n" +
+                "广告\n" +
+                "</p>\n" +
+                "</div>\n" +
+                "</div>\n" +
+                "</a>\n" +
+                "</body>\n" +
+                "</html>\n");
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.WRAP_CONTENT,
                 FrameLayout.LayoutParams.WRAP_CONTENT);
 
-        params.width = 640;
-        params.height = 100;
+        params.width = 1400;
+        params.height = 320;
 
         params.gravity = Gravity.BOTTOM;
 
@@ -58,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.tvOpenPop).setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)
             public void onClick(View v) {
-                PackageManager pm = getPackageManager();
+                getPackageManager();
 
                 if (mPopupWindow == null) {
                     // new ColorDrawable(0x7DC0C0C0) 半透明灰色
