@@ -42,16 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         TestJs js = new TestJs();
         act = this;
-        JyAdView adv = JyAd.initNormalAdView(this, "MEJDNjhDMDJCMzJEQUI1", 480,320, js,"<!DOCTYPE html>\n" +
-                "<html>\n" +
-                "<head>\n" +
-                "<meta charset=\"utf-8\" />\n" +
-                "<title></title>\n" +
-                "</head>\n" +
-                "<style type=\"text/css\">\n" +
-                "*{margin: 0;padding: 0;font-style: normal;text-decoration: none;}\n" +
-                "</style>\n" +
-                "<body>\n" +
+        JyAdView adv = JyAd.initNormalAdView(this, "MEJDNjhDMDJCMzJEQUI1", 1400,320, js,
                 "<a href=\"__landingpage_url__\" target=\"_blank\">\n" +
                 "<div style=\"overflow: hidden;width: 1400px;\">\n" +
                 "<div><img src=\"__adurl__\" style=\"float: left;margin: 0;padding: 0;\"></div>\n" +
@@ -64,9 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 "</p>\n" +
                 "</div>\n" +
                 "</div>\n" +
-                "</a>\n" +
-                "</body>\n" +
-                "</html>\n");
+                "</a>");
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.WRAP_CONTENT,
                 FrameLayout.LayoutParams.WRAP_CONTENT);
