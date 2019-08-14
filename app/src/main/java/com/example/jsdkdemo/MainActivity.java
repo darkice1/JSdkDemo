@@ -42,26 +42,13 @@ public class MainActivity extends AppCompatActivity {
 
         TestJs js = new TestJs();
         act = this;
-        JyAdView adv = JyAd.initNormalAdView(this, "MEJDNjhDMDJCMzJEQUI1", 1400,320, js,
-                "<a href=\"__landingpage_url__\" target=\"_blank\">\n" +
-                "<div style=\"overflow: hidden;width: 1400px;\">\n" +
-                "<div><img src=\"__adurl__\" style=\"float: left;margin: 0;padding: 0;\"></div>\n" +
-                "<div style=\"float: left;margin-top: 20px;width: 920px;\">\n" +
-                "<p id=\"\" style=\"font-size:2rem;width: 900px;height: 200px;word-wrap: break-word;word-break: normal; margin-left: 20px;color: #333333;\">\n" +
-                "__title__\n" +
-                "</p>\n" +
-                "<p style=\"font-size:1rem;margin-left:20px;color: #808080;\">\n" +
-                "广告\n" +
-                "</p>\n" +
-                "</div>\n" +
-                "</div>\n" +
-                "</a>");
+        JyAdView adv = JyAd.initNormalAdView(this, "MEJDNjhDMDJCMzJEQUI1", 320,50, js);
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.WRAP_CONTENT,
                 FrameLayout.LayoutParams.WRAP_CONTENT);
 
-        params.width = 1400;
-        params.height = 320;
+        params.width = 320;
+        params.height = 50;
 
         params.gravity = Gravity.BOTTOM;
 
