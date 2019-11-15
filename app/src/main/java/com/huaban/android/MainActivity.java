@@ -1,4 +1,4 @@
-package com.example.jsdkdemo;
+package com.huaban.android;
 
 import android.app.Activity;
 import android.content.pm.PackageManager;
@@ -10,6 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
+
+import com.example.jsdkdemo.R;
 
 import cn.imeiadx.jsdk.jy.mob.JyAd;
 import cn.imeiadx.jsdk.jy.mob.JyAdListener;

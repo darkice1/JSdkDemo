@@ -1,4 +1,4 @@
-package com.example.jsdkdemo;
+package com.huaban.android;
 
 import android.util.Log;
 
