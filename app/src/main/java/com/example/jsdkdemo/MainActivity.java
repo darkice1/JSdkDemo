@@ -42,13 +42,13 @@ public class MainActivity extends AppCompatActivity {
 
         TestJs js = new TestJs();
         act = this;
-        JyAdView adv = JyAd.initNormalAdView(this, "MEJDNjhDMDJCMzJEQUI1", 320,50, js);
+        JyAdView adv = JyAd.initNormalAdView(this, "AFDMYSFVZ3TYNR4S0EE5", 600,500, js);
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.WRAP_CONTENT,
                 FrameLayout.LayoutParams.WRAP_CONTENT);
 
-        params.width = 320;
-        params.height = 50;
+        params.width = 600;
+        params.height = 500;
 
         params.gravity = Gravity.BOTTOM;
 

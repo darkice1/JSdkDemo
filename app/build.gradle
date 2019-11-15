@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.jsdkdemo"
+        applicationId "com.huaban.android"
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 1
