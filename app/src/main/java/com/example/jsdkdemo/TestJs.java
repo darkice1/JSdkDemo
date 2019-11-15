@@ -1,17 +1,32 @@
 package com.example.jsdkdemo;
 
 import android.util.Log;
-import android.webkit.JavascriptInterface;
 
-import cn.imeiadx.jsdk.jy.mob.JyJS;
+import cn.imeiadx.jsdk.jy.mob.JyAdListener2;
 
 
-public class TestJs extends JyJS
+public class TestJs extends JyAdListener2
 {
-	@JavascriptInterface  
-	public void adcallback()
-	{
-		WLog.d("没有广告进行回调。");
+	@Override
+	public void onADReceive() {
+		Log.e("ADTEST","onADReceive");
 	}
 
+	@Override
+	public void onADClicked() {
+		Log.e("ADTEST","onADClicked");
+	}
+
+
+	@Override
+	public void onNoAD(String msg) {
+
+		super.onADExposure();
+		Log.e("ADTEST","onnodate:"+ msg);
+	}
+
+	@Override
+	public void onADExposure() {
+		Log.e("ADTEST","onADExposure");
+	}
 }
