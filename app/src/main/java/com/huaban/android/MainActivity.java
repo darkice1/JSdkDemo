@@ -11,7 +11,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import com.example.jsdkdemo.R;
+
 
 import cn.imeiadx.jsdk.jy.mob.JyAd;
 import cn.imeiadx.jsdk.jy.mob.JyAdListener;
