@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private JyAdPopWindow mPopupWindow = null;
     private Activity act = null;
     // 位置ID
-    private String pid = "DAOOVC5SHVFTXACPPLL0";
+    private String pid = "II4RNYYKYBB5O6F9SEFW";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,13 +42,13 @@ public class MainActivity extends AppCompatActivity {
 
         TestJs js = new TestJs();
         act = this;
-        JyAdView adv = JyAd.initNormalAdView(this, "MEJDNjhDMDJCMzJEQUI1", 320,50, js);
+        JyAdView adv = JyAd.initNormalAdView(this, "II4RNYYKYBB5O6F9SEFW", -1,-1, js);
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.WRAP_CONTENT,
                 FrameLayout.LayoutParams.WRAP_CONTENT);
 
-        params.width = 320;
-        params.height = 50;
+        params.width = -1;
+        params.height = -1;
 
         params.gravity = Gravity.BOTTOM;
 
