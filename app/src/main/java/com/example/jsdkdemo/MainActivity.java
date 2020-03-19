@@ -13,6 +13,7 @@ import android.widget.FrameLayout;
 
 import cn.imeiadx.jsdk.jy.mob.JyAd;
 import cn.imeiadx.jsdk.jy.mob.JyAdListener;
+import cn.imeiadx.jsdk.jy.mob.JyAdListener2;
 import cn.imeiadx.jsdk.jy.mob.JyAdPopWindow;
 import cn.imeiadx.jsdk.jy.mob.JyAdView;
 
@@ -40,15 +41,37 @@ public class MainActivity extends AppCompatActivity {
             WLog.d("木有这个权限");
         }
 
-        TestJs js = new TestJs();
         act = this;
-        JyAdView adv = JyAd.initNormalAdView(this, "II4RNYYKYBB5O6F9SEFW", -1,-1, js);
+        final JyAdListener2 listener2 = new JyAdListener2()
+        {
+            public void onNoAD(String err)
+            {
+                WLog.d("JyAdListener.onClosed:"+err);
+            }
+
+            public void onADReceive() {
+                WLog.d("onADReceive");
+            }
+
+            public void onADExposure() {
+                WLog.d("onADExposure");
+
+            }
+
+            public void onADClicked() {
+                WLog.d("onADClicked");
+
+            }
+
+        };
+
+        final JyAdView adv = JyAd.initNormalAdView(this, "II4RNYYKYBB5O6F9SEFW", 640,100, listener2);
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.WRAP_CONTENT,
                 FrameLayout.LayoutParams.WRAP_CONTENT);
 
-        params.width = -1;
-        params.height = -1;
+        params.width = 640;
+        params.height = 100;
 
         params.gravity = Gravity.BOTTOM;
 
@@ -58,22 +81,10 @@ public class MainActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.M)
             public void onClick(View v) {
                 getPackageManager();
-
                 if (mPopupWindow == null) {
                     // new ColorDrawable(0x7DC0C0C0) 半透明灰色
-                    mPopupWindow = JyAd.initPopWindow(act, pid, 300, 250, null,
-                            new ColorDrawable(0x7DC0C0C0));
-                    JyAdListener l = new JyAdListener() {
-                        @Override
-                        public void onClosed() {
-                            // 加入广告插屏关闭时响应
-                            WLog.d("JyAdListener.onClosed");
-                            mPopupWindow = null;
-                        }
-
-                    };
-
-                    mPopupWindow.setListener(l); }
+                    mPopupWindow = JyAd.initPopWindow(act, pid, 640, 960, listener2,  new ColorDrawable(0x7DC0C0C0));
+                }
             }
         });
 
