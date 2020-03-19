@@ -1,29 +1,38 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:gravity="center"
-    >
+    android:orientation="horizontal">
 
     <TextView
         android:id="@+id/tvOpenPop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp"
         android:layout_margin="10dp"
         android:background="@color/colorPrimaryDark"
-        android:textColor="#fff"
-        android:text="@string/openwm"/>
+        android:padding="10dp"
+        android:text="请求窗口"
+        android:textColor="#fff" />
 
     <TextView
         android:id="@+id/tvClosePop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp"
         android:layout_margin="10dp"
         android:background="@color/colorPrimaryDark"
-        android:textColor="#fff"
-        android:text="@string/closewm"/>
+        android:padding="10dp"
+        android:text="隐藏窗口"
+        android:textColor="#fff" />
+
+    <TextView
+        android:id="@+id/tvShowPop"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark"
+        android:padding="10dp"
+        android:text="显示窗口"
+        android:textColor="#fff" />
 
 
 </LinearLayout>

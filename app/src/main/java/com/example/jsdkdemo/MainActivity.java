@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import cn.imeiadx.jsdk.jy.mob.JyAd;
-import cn.imeiadx.jsdk.jy.mob.JyAdListener;
 import cn.imeiadx.jsdk.jy.mob.JyAdListener2;
 import cn.imeiadx.jsdk.jy.mob.JyAdPopWindow;
 import cn.imeiadx.jsdk.jy.mob.JyAdView;
@@ -84,6 +83,17 @@ public class MainActivity extends AppCompatActivity {
                 if (mPopupWindow == null) {
                     // new ColorDrawable(0x7DC0C0C0) 半透明灰色
                     mPopupWindow = JyAd.initPopWindow(act, pid, 640, 960, listener2,  new ColorDrawable(0x7DC0C0C0));
+                    mPopupWindow.getPopView().setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+
+        findViewById(R.id.tvShowPop).setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            public void onClick(View v) {
+                if (mPopupWindow != null) {
+                    // new ColorDrawable(0x7DC0C0C0) 半透明灰色
+                    mPopupWindow.getPopView().setVisibility(View.VISIBLE);
                 }
             }
         });
