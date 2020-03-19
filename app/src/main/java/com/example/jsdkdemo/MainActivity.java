@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 if (mPopupWindow == null) {
                     // new ColorDrawable(0x7DC0C0C0) 半透明灰色
                     mPopupWindow = JyAd.initPopWindow(act, pid, 640, 960, listener2,  new ColorDrawable(0x7DC0C0C0));
-                    mPopupWindow.getPopView().setVisibility(View.INVISIBLE);
+                   // mPopupWindow.getPopView().setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (mPopupWindow != null) {
                     // new ColorDrawable(0x7DC0C0C0) 半透明灰色
-                    mPopupWindow.getPopView().setVisibility(View.VISIBLE);
+                   // mPopupWindow.getPopView().setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -102,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (mPopupWindow != null) {
                     mPopupWindow.dismiss();
+                    mPopupWindow=null;
                 }
 
             }
