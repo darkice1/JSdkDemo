@@ -25,10 +25,9 @@
 
     <TextView
         android:id="@+id/tvShowPop"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:layout_weight="1"
         android:background="@color/colorPrimaryDark"
         android:padding="10dp"
         android:text="显示窗口"
