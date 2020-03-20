@@ -9,19 +9,22 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
 
 import cn.imeiadx.jsdk.jy.mob.JyAd;
 import cn.imeiadx.jsdk.jy.mob.JyAdListener2;
-import cn.imeiadx.jsdk.jy.mob.JyAdPopWindow;
 import cn.imeiadx.jsdk.jy.mob.JyAdView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private JyAdPopWindow mPopupWindow = null;
+    private JyAdView wv = null;
     private Activity act = null;
     // 位置ID
     private String pid = "II4RNYYKYBB5O6F9SEFW";
+
+    private PopupWindow popwin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,45 +67,65 @@ public class MainActivity extends AppCompatActivity {
 
         };
 
-        final JyAdView adv = JyAd.initNormalAdView(this, "II4RNYYKYBB5O6F9SEFW", 640,100, listener2);
+/*        final JyAdView adv = JyAd.initNormalAdView(this, "II4RNYYKYBB5O6F9SEFW", 640,100,null);
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.WRAP_CONTENT,
                 FrameLayout.LayoutParams.WRAP_CONTENT);
 
         params.width = 640;
         params.height = 100;
-
         params.gravity = Gravity.BOTTOM;
+        this.addContentView(adv, params);*/
 
-        this.addContentView(adv, params);
+        //自定义插屏
+        int w= 640,h=960;
+
+        RelativeLayout tp = new RelativeLayout(act);
+        popwin = new PopupWindow(tp);
+        JyAdView wv = JyAd.initNormalAdView(this, "II4RNYYKYBB5O6F9SEFW", w,h, listener2);
+//        wv.a(act);
+        RelativeLayout.LayoutParams wvl = new RelativeLayout.LayoutParams(w,h);
+        wvl.addRule(RelativeLayout.CENTER_IN_PARENT);
+        wv.setLayoutParams(wvl);
+
+        RelativeLayout.LayoutParams tpl = new RelativeLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.MATCH_PARENT);
+        tpl.addRule(RelativeLayout.CENTER_IN_PARENT);
+        tp.setLayoutParams(tpl);
+
+        tp.addView(wv);
+        popwin.setBackgroundDrawable(new ColorDrawable(0));
+        popwin.setFocusable(false);
+        popwin.setWidth(w);
+        popwin.setHeight(h);
+        popwin.setTouchable(true);
+        popwin.setOutsideTouchable(false); //false时点击外面不会被关闭
+
 
         findViewById(R.id.tvOpenPop).setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)
             public void onClick(View v) {
                 getPackageManager();
-                if (mPopupWindow == null) {
-                    // new ColorDrawable(0x7DC0C0C0) 半透明灰色
-                    mPopupWindow = JyAd.initPopWindow(act, pid, 640, 960, listener2,  new ColorDrawable(0x7DC0C0C0));
-                    mPopupWindow.getPopView().setVisibility(View.INVISIBLE);
-                }
+                popwin.showAtLocation(act.getWindow().getDecorView(),Gravity.CENTER, 0, 0);
+                popwin.update();
             }
         });
 
         findViewById(R.id.tvShowPop).setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)
             public void onClick(View v) {
-                if (mPopupWindow != null) {
-                    // new ColorDrawable(0x7DC0C0C0) 半透明灰色
-                    mPopupWindow.getPopView().setVisibility(View.VISIBLE);
-                }
+                popwin.showAtLocation(act.getWindow().getDecorView(),Gravity.CENTER, 0, 0);
+                popwin.update();
             }
         });
 
         findViewById(R.id.tvClosePop).setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if (mPopupWindow != null) {
-                    mPopupWindow.dismiss();
-                    mPopupWindow=null;
+            public void onClick(View v)
+            {
+                popwin.dismiss();
+//                if (wv != null)
+                {
+//                    adview.dismiss();
+//                    wv =null;
                 }
 
             }
