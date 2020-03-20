@@ -57,12 +57,10 @@ public class MainActivity extends AppCompatActivity {
 
             public void onADExposure() {
                 WLog.d("onADExposure");
-
             }
 
             public void onADClicked() {
                 WLog.d("onADClicked");
-
             }
 
         };
@@ -81,9 +79,9 @@ public class MainActivity extends AppCompatActivity {
         int w= 640,h=960;
 
         RelativeLayout tp = new RelativeLayout(act);
+        wv = JyAd.initNormalAdView(act, "II4RNYYKYBB5O6F9SEFW", w,h, listener2);
+
         popwin = new PopupWindow(tp);
-        JyAdView wv = JyAd.initNormalAdView(this, "II4RNYYKYBB5O6F9SEFW", w,h, listener2);
-//        wv.a(act);
         RelativeLayout.LayoutParams wvl = new RelativeLayout.LayoutParams(w,h);
         wvl.addRule(RelativeLayout.CENTER_IN_PARENT);
         wv.setLayoutParams(wvl);
@@ -99,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         popwin.setHeight(h);
         popwin.setTouchable(true);
         popwin.setOutsideTouchable(false); //false时点击外面不会被关闭
-
+//        popwin.setBackgroundDrawable(new ColorDrawable(Color.rgb(255,0,0)));
 
         findViewById(R.id.tvOpenPop).setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)
@@ -107,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
                 getPackageManager();
                 popwin.showAtLocation(act.getWindow().getDecorView(),Gravity.CENTER, 0, 0);
                 popwin.update();
+                wv.refreshDrawableState();
             }
         });
 
