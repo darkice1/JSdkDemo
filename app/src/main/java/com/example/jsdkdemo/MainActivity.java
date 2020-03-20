@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         int w= 640,h=960;
 
         RelativeLayout tp = new RelativeLayout(act);
-        wv = JyAd.initNormalAdView(act, "II4RNYYKYBB5O6F9SEFW", w,h, listener2);
+        wv = JyAd.initNormalAdView(act, "II4RNYYKYBB5O6F9SEFW", -1,-1, listener2);
 
         popwin = new PopupWindow(tp);
         RelativeLayout.LayoutParams wvl = new RelativeLayout.LayoutParams(w,h);
