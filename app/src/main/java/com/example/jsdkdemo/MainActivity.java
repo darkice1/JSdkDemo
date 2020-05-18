@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import cn.imeiadx.jsdk.jy.mob.JyAd;
-import cn.imeiadx.jsdk.jy.mob.JyAdListener;
 import cn.imeiadx.jsdk.jy.mob.JyAdListener2;
 import cn.imeiadx.jsdk.jy.mob.JyAdPopWindow;
 import cn.imeiadx.jsdk.jy.mob.JyAdView;
@@ -22,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private JyAdPopWindow mPopupWindow = null;
     private Activity act = null;
     // 位置ID
-    private String pid = "II4RNYYKYBB5O6F9SEFW";
+    private String pid = "GL2TTLZJK3JTFWXECFJ1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
         } else {
             WLog.d("木有这个权限");
         }
+
+        //设置下载路径 默认为Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+//        JyAd.setDowdloadPath();
 
         act = this;
         final JyAdListener2 listener2 = new JyAdListener2()
@@ -65,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
         };
 
-        final JyAdView adv = JyAd.initNormalAdView(this, "II4RNYYKYBB5O6F9SEFW", 640,100, listener2);
+        final JyAdView adv = JyAd.initNormalAdView(this, pid, -1,-1, listener2);
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.WRAP_CONTENT,
                 FrameLayout.LayoutParams.WRAP_CONTENT);
@@ -83,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 getPackageManager();
                 if (mPopupWindow == null) {
                     // new ColorDrawable(0x7DC0C0C0) 半透明灰色
-                    mPopupWindow = JyAd.initPopWindow(act, pid, 640, 960, listener2,  new ColorDrawable(0x7DC0C0C0));
+                    mPopupWindow = JyAd.initPopWindow(act, pid, -1, -1 , listener2,  new ColorDrawable(0x7DC0C0C0));
                 }
             }
         });
