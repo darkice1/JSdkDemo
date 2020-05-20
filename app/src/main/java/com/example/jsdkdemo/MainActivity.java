@@ -72,6 +72,9 @@ public class MainActivity extends AppCompatActivity {
                 FrameLayout.LayoutParams.WRAP_CONTENT,
                 FrameLayout.LayoutParams.WRAP_CONTENT);
 
+        //是否在开新窗口  true 新开窗口（默认值） false在app内打卡
+//        adv.setOpen(false);
+
         params.width = 640;
         params.height = 100;
 

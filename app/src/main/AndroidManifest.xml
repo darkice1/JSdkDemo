@@ -17,14 +17,5 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <provider android:name="cn.imeiadx.jsdk.JsdkFileProvider"
-            android:authorities="com.example.jsdkdemo.jsdk.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-            android:name="android.support.FILE_PROVIDER_PATHS"
-            android:resource="@xml/jsdk_file_paths" />
-        </provider>
     </application>
 </manifest>
