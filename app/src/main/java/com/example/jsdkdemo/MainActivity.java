@@ -15,13 +15,16 @@ import cn.imeiadx.jsdk.jy.mob.JyAd;
 import cn.imeiadx.jsdk.jy.mob.JyAdListener2;
 import cn.imeiadx.jsdk.jy.mob.JyAdPopWindow;
 import cn.imeiadx.jsdk.jy.mob.JyAdView;
+import cn.imeiadx.jsdk.jy.mob.JyNative;
 
 public class MainActivity extends AppCompatActivity {
 
     private JyAdPopWindow mPopupWindow = null;
     private Activity act = null;
     // 位置ID
-    private String pid = "GL2TTLZJK3JTFWXECFJ1";
+//    KCIDGYL0HLUTF3O2U190    安卓视频测试	640x960
+//    GL2TTLZJK3JTFWXECFJ1      安卓图片测试	640x960  唤醒
+    private String pid = "KCIDGYL0HLUTF3O2U190";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +62,15 @@ public class MainActivity extends AppCompatActivity {
                 WLog.d("onADExposure");
 
             }
+            public  void onADReceive(JyNative jyNative)
+            {
+                if (jyNative != null)
+                {
+                    jyNative.setOpen(false);
+                    //测试点击效果
+                    jyNative.click();
+                }
+            }
 
             public void onADClicked() {
                 WLog.d("onADClicked");
@@ -68,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         };
 
         final JyAdView adv = JyAd.initNormalAdView(this, pid, -1,-1, listener2);
+        adv.setOpen(false);
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.WRAP_CONTENT,
                 FrameLayout.LayoutParams.WRAP_CONTENT);
@@ -75,8 +88,8 @@ public class MainActivity extends AppCompatActivity {
         //是否在开新窗口  true 新开窗口（默认值） false在app内打卡
 //        adv.setOpen(false);
 
-        params.width = 640;
-        params.height = 100;
+        params.width = 320;
+        params.height = 480;
 
         params.gravity = Gravity.BOTTOM;
 
@@ -88,13 +101,16 @@ public class MainActivity extends AppCompatActivity {
                 getPackageManager();
                 if (mPopupWindow == null) {
                     // new ColorDrawable(0x7DC0C0C0) 半透明灰色
-                    mPopupWindow = JyAd.initPopWindow(act, pid, -1, -1 , listener2,  new ColorDrawable(0x7DC0C0C0));
+                    mPopupWindow = JyAd.initPopWindow(act, pid, -1, -1 , listener2,  new ColorDrawable(0x7DC0C0C0),320,480);
                 }
             }
         });
 
         findViewById(R.id.tvClosePop).setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+/*                JyNative jyNative = JyAd.getNative(act,pid,-1,-1,listener2);
+                jyNative.setOpen(true);*/
+
                 if (mPopupWindow != null) {
                     mPopupWindow.dismiss();
                 }
