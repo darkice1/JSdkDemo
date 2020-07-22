@@ -77,6 +77,10 @@ public class MainActivity extends AppCompatActivity {
 
             }
 
+            public void onClosed()
+            {
+                WLog.d("onClosed");
+            }
         };
 
         final JyAdView adv = JyAd.initNormalAdView(this, pid, -1,-1, listener2);
