@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        final JyAdView adv = JyAd.initNormalAdView(this, pid, -1,-1, listener2);
+        final JyAdView adv = JyAd.initNormalAdView(this, pid, -1,-1, listener2,false);
         adv.setOpen(false);
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.WRAP_CONTENT,
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                 getPackageManager();
                 if (mPopupWindow == null) {
                     // new ColorDrawable(0x7DC0C0C0) 半透明灰色
-                    mPopupWindow = JyAd.initPopWindow(act, pid, -1, -1 , listener2,  new ColorDrawable(0x7DC0C0C0),320,480);
+                    mPopupWindow = JyAd.initPopWindow(act, pid, -1, -1 , listener2,  new ColorDrawable(0x7DC0C0C0),320,480,true);
                 }
             }
         });
