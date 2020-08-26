@@ -11,6 +11,9 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import cn.imeiadx.jsdk.jy.mob.JyAd;
 import cn.imeiadx.jsdk.jy.mob.JyAdListener2;
 import cn.imeiadx.jsdk.jy.mob.JyAdPopWindow;
@@ -30,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         final PackageManager pm = getPackageManager();
         boolean permission = (PackageManager.PERMISSION_GRANTED == pm.checkPermission("android.permission.ACCESS_FINE_LOCATION",
@@ -66,9 +68,20 @@ public class MainActivity extends AppCompatActivity {
             {
                 if (jyNative != null)
                 {
-                    jyNative.setOpen(false);
-                    //测试点击效果
-                    jyNative.click();
+                    JSONObject detail = jyNative.getDetail();
+                    try {
+                        //素材地址
+                        String adurl = detail.getString("adurl");
+//                        WLog.d(adurl);
+                        //发送广告展示请求
+                        jyNative.show();
+                        //执行点击事件并发送请求
+                        jyNative.click();
+
+                    }
+                    catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
 
