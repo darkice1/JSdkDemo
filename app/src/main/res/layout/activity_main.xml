@@ -1,29 +1,268 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:gravity="center"
-    >
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <TextView
-        android:id="@+id/tvOpenPop"
-        android:layout_width="wrap_content"
+
+    <RelativeLayout
+        android:id="@+id/rlPackageName"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:layout_margin="10dp"
-        android:background="@color/colorPrimaryDark"
-        android:textColor="#fff"
-        android:text="@string/openwm"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/tvClosePop"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/tvPackageName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:layout_toLeftOf="@+id/tvPackageNameCopy"
+            android:text="PackageName"
+            android:textIsSelectable="true" />
+
+        <TextView
+            android:id="@+id/tvPackageNameCopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="复制" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/linePackageName"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="10dp"
+        android:background="#ccc"
+        app:layout_constraintStart_toStartOf="@+id/rlPackageName"
+        app:layout_constraintTop_toBottomOf="@+id/rlPackageName" />
+
+    <RelativeLayout
+        android:id="@+id/rlIMei"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:layout_margin="10dp"
-        android:background="@color/colorPrimaryDark"
-        android:textColor="#fff"
-        android:text="@string/closewm"/>
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/linePackageName"
+        app:layout_constraintTop_toBottomOf="@+id/linePackageName">
 
+        <TextView
+            android:id="@+id/tvIMei"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/tvIMeiCopy"
+            android:text="IMei"
+            android:textIsSelectable="true" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/tvIMeiCopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="复制" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/lineIMei"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="10dp"
+        android:background="#ccc"
+        app:layout_constraintStart_toStartOf="@+id/rlIMei"
+        app:layout_constraintTop_toBottomOf="@+id/rlIMei" />
+
+    <RelativeLayout
+        android:id="@+id/rlMac"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/lineIMei"
+        app:layout_constraintTop_toBottomOf="@+id/lineIMei">
+
+        <TextView
+            android:id="@+id/tvMac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/tvMacCopy"
+            android:text="Mac"
+            android:textIsSelectable="true" />
+
+        <TextView
+            android:id="@+id/tvMacCopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="复制" />
+    </RelativeLayout>
+    <View
+        android:id="@+id/lineMac"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="10dp"
+        android:background="#ccc"
+        app:layout_constraintStart_toStartOf="@+id/rlMac"
+        app:layout_constraintTop_toBottomOf="@+id/rlMac" />
+    <RelativeLayout
+        android:id="@+id/rlOAid"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/lineMac"
+        app:layout_constraintTop_toBottomOf="@+id/lineMac">
+
+        <TextView
+            android:id="@+id/tvOAid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/tvOAidCopy"
+            android:lineSpacingExtra="3dp"
+            android:text="OAID"
+            android:textIsSelectable="true" />
+
+        <TextView
+            android:id="@+id/tvOAidCopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="复制" />
+    </RelativeLayout>
+    <View
+        android:id="@+id/lineOAid"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="10dp"
+        android:background="#ccc"
+        app:layout_constraintStart_toStartOf="@+id/rlOAid"
+        app:layout_constraintTop_toBottomOf="@+id/rlOAid" />
+    <LinearLayout
+        android:id="@+id/llNormalAd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="@+id/lineOAid"
+        app:layout_constraintTop_toBottomOf="@+id/lineOAid">
+
+        <TextView
+            android:id="@+id/tvNormalAd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="普通广告" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:srcCompat="@drawable/ic_right_arrow" />
+    </LinearLayout>
+    <View
+        android:id="@+id/lineNormalAd"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="10dp"
+        android:background="#ccc"
+        app:layout_constraintStart_toStartOf="@+id/llNormalAd"
+        app:layout_constraintTop_toBottomOf="@+id/llNormalAd" />
+    <LinearLayout
+        android:id="@+id/llPopAd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="@+id/lineNormalAd"
+        app:layout_constraintTop_toBottomOf="@+id/lineNormalAd">
+
+        <TextView
+            android:id="@+id/tvJumpAd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="弹出广告" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:srcCompat="@drawable/ic_right_arrow" />
+    </LinearLayout>
+    <View
+        android:id="@+id/linePopAd"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="10dp"
+        android:background="#ccc"
+        app:layout_constraintStart_toStartOf="@+id/llPopAd"
+        app:layout_constraintTop_toBottomOf="@+id/llPopAd" />
+    <LinearLayout
+        android:id="@+id/llSelfAd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="@+id/llPopAd"
+        app:layout_constraintTop_toBottomOf="@+id/llPopAd">
+
+        <TextView
+            android:id="@+id/tvSelfAd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="自渲染广告" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:srcCompat="@drawable/ic_right_arrow" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/lineSelfAd"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="10dp"
+        android:background="#ccc"
+        app:layout_constraintStart_toStartOf="@+id/llSelfAd"
+        app:layout_constraintTop_toBottomOf="@+id/llSelfAd" />
+    <LinearLayout
+        android:id="@+id/llSplashAd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="@+id/lineSelfAd"
+        app:layout_constraintTop_toBottomOf="@+id/lineSelfAd">
+
+        <TextView
+            android:id="@+id/tvSplashAd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="开屏广告" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:srcCompat="@drawable/ic_right_arrow" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/lineSplashAd"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="10dp"
+        android:background="#ccc"
+        app:layout_constraintStart_toStartOf="@+id/llSplashAd"
+        app:layout_constraintTop_toBottomOf="@+id/llSplashAd" />
+</android.support.constraint.ConstraintLayout>
