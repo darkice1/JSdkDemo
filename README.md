@@ -22,4 +22,6 @@
 
 [11.下载路径修改](https://github.com/darkice1/JSdkDemo/wiki/%E4%B8%8B%E8%BD%BD%E8%B7%AF%E5%BE%84%E4%BF%AE%E6%94%B9)
 
-[12.在APP内打开广告](https://github.com/darkice1/JSdkDemo/wiki/%E5%9C%A8APP%E5%86%85%E6%89%93%E5%BC%80%E5%B9%BF%E5%91%8A)
+[12.在APP内打开广告](https://github.com/darkice1/JSdkDemo/wiki/%E5%9C%A8APP%E5%86%85%E6%89%93%E5%BC%80%E5%B9%BF%E5%91%8A) 
+
+[13.版本说明](https://github.com/darkice1/JSdkDemo/wiki/%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E)
