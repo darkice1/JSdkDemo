@@ -38,5 +38,5 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
     implementation 'com.android.support:multidex:1.0.3'
-    implementation 'com.tuiyi.sdk:jsdk-oaid:1.0.6'
+    implementation 'com.tuiyi.sdk:jsdk-oaid:1.0.7'
 }
